@@ -1,35 +1,57 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" href="./assets/img/4geeks.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello Rigo with Vanilla.js</title>
+<!DOCTYPE html>
+<html lang="es">
 
-    <!-- Fontawesome is our recomended library for icons -->
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
-      integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
-      crossorigin="anonymous"
-    />
-  </head>
-  <body>
-    <!-- Write your HTML code here, you can delete everything withing the body tags -->
-    <div class="container-fluid text-center">
-      <h1 class="mt-5">Hello Rigo!</h1>
-      <img src="./assets/img/rigo-baby.jpg" />
-      <p class="alert alert-warning mt-4">
-        If this text is <b>not</b> centered and <b>yellow</b>, you probably have
-        an error
-      </p>
-      <div class="fixed-bottom p-4">
-        Made with ❤️ by
-        <a href="https://www.4geeksacademy.com">4Geeks Academy</a>
+<head>
+  <meta charset="UTF-8">
+
+  <title>Domain Generator</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-light p-5">
+
+  <div class="container bg-white p-4 rounded shadow-sm">
+    <h2 class="mb-4 text-center">Domain Manager</h2>
+
+    <div class="row g-3">
+      <div class="col-md-4">
+        <div class="input-group mb-3">
+          <input type="text" id="input1" class="form-control" placeholder="Pronoun">
+          <button class="btn btn-success" type="button" onclick="addItem('input1', 'list1')">Add</button>
+        </div>
+        <div id="list1" class="list-container"></div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="input-group mb-3">
+          <input type="text" id="input2" class="form-control" placeholder="Adjective">
+          <button class="btn btn-success" type="button" onclick="addItem('input2', 'list2')">Add</button>
+        </div>
+        <div id="list2" class="list-container"></div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="input-group mb-3">
+          <input type="text" id="input3" class="form-control" placeholder="Extension">
+          <button class="btn btn-success" type="button" onclick="addItem('input3', 'list3')">Add</button>
+        </div>
+        <div id="list3" class="list-container"></div>
       </div>
     </div>
+  </div>
 
-    <!-- Do not delete this script tag, this is what connects your HTML with the Javascript code -->
-    <script type="module" src="/app.js"></script>
-  </body>
+  <div class="row mt-5">
+    <div class="col-12 border-top pt-4">
+      <h4 class="text-center mb-4">Combinations:</h4>
+      <div id="final-list" class="text-center bg-white p-3 rounded border shadow-sm" style="min-height: 100px;">
+        <p class="text-muted">Add words on all columns to generate domains:</p>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="app.js"></script>
+
+</body>
+
 </html>
