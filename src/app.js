@@ -18,29 +18,29 @@ window.onload = function() {
 
 function updateDomainList() {
   const pronouns = Array.from(document.querySelectorAll('#list1 span')).map(s => s.textContent);
-  const adjs = Array.from(document.querySelectorAll('#list2 span')).map(s => s.textContent);
+  const adjectives = Array.from(document.querySelectorAll('#list2 span')).map(s => s.textContent);
   const extensions = Array.from(document.querySelectorAll('#list3 span')).map(s => s.textContent);
 
   const finalList = document.getElementById('final-list');
 
   finalList.innerHTML = "";
 
-  if (pronouns.length === 0 || adjs.length === 0 || extensions.length === 0) {
+  if (pronouns.length === 0 || adjectives.length === 0 || extensions.length === 0) {
     finalList.innerHTML = 'Some data missing on a column...';
     return;
   }
 
-  pronouns.forEach(p => {
-    adjs.forEach(a => {
-      extensions.forEach(ext => {
+  pronouns.forEach(pronoun => {
+    adjectives.forEach(adjective => {
+      extensions.forEach(extension => {
         const pTag = document.createElement('p');
         pTag.className = "mb-2 fw-bold";
 
-        if (a.toLowerCase().endsWith(ext.toLowerCase())) {
-          const aCut = a.slice(0, -ext.length);
-          pTag.innerHTML = `${p}${aCut}<span class="text-success">.${ext}</span> ✨`;
+        if (adjective.toLowerCase().endsWith(extension.toLowerCase())) {
+          const aCut = adjective.slice(0, -extension.length);
+          pTag.innerHTML = `${pronoun}${aCut}<span class="text-success">.${extension}</span> ✨`;
         } else {
-          pTag.textContent = `${p}${a}.${ext}`;
+          pTag.textContent = `${pronoun}${adjective}.${extension}`;
         }
 
         finalList.appendChild(pTag);
